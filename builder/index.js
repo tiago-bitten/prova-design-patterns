@@ -16,7 +16,7 @@ class Computer {
     Computador configurado:
     CPU: ${this.cpu}
     GPU: ${this.gpu !== null ? this.gpu : "GPU integrado"}
-    RAM: ${this.ram}
+    RAM: ${this.ram !== null ? this.ram : "128MB"}
     Armazenamento: ${this.storage}
     Fonte: ${this.powerSupply}
     Gabinete: ${this.caseType}
@@ -32,7 +32,7 @@ class ComputerBuilder {
     this.computer = new Computer();
   }
 
-  setCPU(cpu) {
+  setProcessadorLogico(cpu) {
     this.computer.cpu = cpu;
     return this;
   }
@@ -81,7 +81,7 @@ class ComputerBuilder {
 class ComputerDirector {
   static buildGamingPC() {
     return new ComputerBuilder()
-      .setCPU("Intel i9")
+      .setProcessadorLogico("Intel i9")
       .setGPU("NVIDIA RTX 4090")
       .setRAM("64GB")
       .setStorage("2TB SSD")
@@ -94,7 +94,7 @@ class ComputerDirector {
 
   static buildOfficePC() {
     return new ComputerBuilder()
-      .setCPU("Intel i5")
+      .setProcessadorLogico("Intel i5")
       .setGPU("Integrada Intel UHD")
       .setRAM("16GB")
       .setStorage("512GB SSD")
@@ -106,7 +106,7 @@ class ComputerDirector {
 
   static buildLinuxDevPC() {
     return new ComputerBuilder()
-      .setCPU("AMD Ryzen 7")
+      .setProcessadorLogico("AMD Ryzen 7")
       .setGPU("AMD Radeon RX 7800XT")
       .setRAM("32GB")
       .setStorage("1TB SSD")
@@ -122,9 +122,9 @@ class ComputerDirector {
 const gamer = ComputerDirector.buildGamingPC();
 const office = ComputerDirector.buildOfficePC();
 const dev = ComputerDirector.buildLinuxDevPC();
-const satc = new ComputerBuilder().setCPU("Celeron 400").build();
+const satc = new ComputerBuilder().setProcessadorLogico("Celeron 400").build();
 
 gamer.showConfig();
 office.showConfig();
 dev.showConfig();
-//satc.showConfig();
+satc.showConfig();
