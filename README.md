@@ -8,3 +8,10 @@ Patterns Criacionais:
 - Abstract Factory
 - Builder
 - Singleton
+
+Patterns Estruturais:
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
