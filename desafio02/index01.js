@@ -32,7 +32,7 @@ class UppercaseMessageDecorator extends MessageDecorator {
 
 const msg = new Message("hoje o dia está horrível");
 
-const decorated = new HappyMessageDecorator(
+const decorated = new TitleMessageDecorator(
     new UppercaseMessageDecorator(
         new CensorshipMessageDecorator(msg)
     )
