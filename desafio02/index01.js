@@ -33,9 +33,7 @@ class UppercaseMessageDecorator extends MessageDecorator {
 const msg = new Message("hoje o dia está horrível");
 
 const decorated = new TitleMessageDecorator(
-    new UppercaseMessageDecorator(
-        new CensorshipMessageDecorator(msg)
-    )
+    new UppercaseMessageDecorator(msg)
 );
 
 console.log(decorated.getText());
